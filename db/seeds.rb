@@ -17,7 +17,9 @@
     
  n = 1
  while n <= 100
+ user_name = "yuriko"
  Blog.create(
+     user_name: user_name,
      title: Faker::Lorem.characters(10),
      content: Faker::Lorem.sentence,
       user_id:n
