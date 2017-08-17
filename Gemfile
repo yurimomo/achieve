@@ -45,6 +45,10 @@ group :development, :test do
   gem 'spring'
 end
 
+group :development do
+	gem 'letter_opener_web'
+end
+
 gem 'twitter-bootstrap-rails'
 
 gem 'jquery-turbolinks'

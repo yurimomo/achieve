@@ -22,6 +22,7 @@ class BlogsController < ApplicationController
     @blog.user_name = current_user.name
     if @blog.save
     redirect_to blogs_path, notice: "ブログを作成しました！"
+    NoticeMailer.sendmail_blog(@blog).deliver
   else
     render 'new'
     end
