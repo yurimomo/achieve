@@ -58,4 +58,8 @@ gem 'jquery-turbolinks'
 
 gem 'rails_12factor' , group: :production
 
+gem 'rails_admin'
+
+gem 'cancan'
+
 gem 'faker'
