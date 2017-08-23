@@ -11,7 +11,7 @@
  <p>名前:<%= @contact.name %></p>
  <p>メールアドレス:<%= @contact.email %></p>
  <p>内容:<%= @contact.content %></p>
-  <%= f.submit "送信する" %>
+  <%= f.submit "送信する", class: 'btn btn-primary btn-block' %>
  <% end %>
  
   <%= form_for(@contact,url: new_contact_path, method: 'get') do |f| %>
@@ -25,3 +25,5 @@
  </div>
  
  
+
+
