@@ -8,3 +8,4 @@ class PoemsController < ApplicationController
 		@poem = Poem.find(params[:id])
 	end
 end
+
