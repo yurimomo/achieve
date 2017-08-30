@@ -69,4 +69,6 @@ gem 'cancan'
 
 gem 'her'
 
+gem 'omniauth', '>= 1.0.0'
+
 gem 'faker'
