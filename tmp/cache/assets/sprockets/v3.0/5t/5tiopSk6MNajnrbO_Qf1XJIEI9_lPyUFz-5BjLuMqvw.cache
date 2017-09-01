@@ -1,0 +1,30 @@
+I"|(function() {
+  var ready;
+
+  ready = function() {
+    $(window).scroll(function() {
+      var element, height, visible;
+      element = $('#page-top-btn');
+      visible = element.is(':visible');
+      height = $(window).scrollTop();
+      if (height > 400) {
+        if (!visible) {
+          return element.fadeIn();
+        }
+      } else {
+        return element.fadeOut();
+      }
+    });
+    return $(document).on('click', '#move-page-top', function() {
+      return $('html, body').animate({
+        scrollTop: 0
+      }, 'slow');
+    });
+  };
+
+  $(document).ready(ready);
+
+  $(document).on('page:load', ready);
+
+}).call(this);
+:ET

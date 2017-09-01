@@ -51,6 +51,8 @@ end
 group :development do
 	gem 'letter_opener_web'
 
+	gem 'dotenv-rails'
+
 	 # Access an IRB console on exception pages or by using <%= console %> in views
 end
 
@@ -69,6 +71,16 @@ gem 'activeresource'
 
 gem 'her'
 
-gem 'omniauth', '>= 1.0.0'
+# gem 'omniauth', '>= 1.0.0'
+
+gem 'omniauth'
+
+gem 'omniauth-twitter'
+
+gem 'omniauth-facebook'
+
+gem 'carrierwave'
+
+gem 'mini_magick'
 
 gem 'faker'

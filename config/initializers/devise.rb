@@ -247,6 +247,15 @@ Devise.setup do |config|
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
 
+  if Rails.env.production?
+    config.omniauth :facebook, ENV["FACEBOOK_ID_PRODUCTION"],ENV["FACEBOOK_SECRET_PRODUCTION"],scope: 'email',display: 'popup',info_fields:'name,email'
+    config.omniauth :twitter, ENV["TWITTER_ID_PRODUCTION"],ENV["TWITTER_SECRET_PRODUCTION"],scope: 'email',display: 'popup',info_fields: 'name,email'
+  else
+    config.omniauth :facebook, ENV["FACEBOOK_ID_DEVELOPMENT"],ENV["FACEBOOK_SECRET_DEVELOPMENT"],scope: 'email',display: 'popup',info_fields: 'name,email'
+    config.omniauth :twitter, ENV["TWITTER_ID_DEVELOPMENT"],ENV["TWITTER_SECRET_DEVELOPMENT"],scope: 'email',display: 'popup',info_fields: 'name,email'
+  end
+
+
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
