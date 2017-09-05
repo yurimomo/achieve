@@ -13604,3 +13604,497 @@ Completed 200 OK in 125ms (Views: 124.8ms | ActiveRecord: 0.3ms)
 
 
 Started GET "/assets/header.jpg" for ::1 at 2017-09-05 14:07:03 +0900
+
+
+Started DELETE "/users/sign_out" for ::1 at 2017-09-05 14:23:45 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"HzbEX8wVSp6Ur/lbiBe2I1lyP16I1EGaM3nXSNAxJnvbIhOU166850rueGlbQjNbcM3Nq0QZLJ/H2c1G/BJ+vg=="}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2017-09-05 14:23:45 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 258ms (Views: 257.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/blogs.self-3c46d205306a41f6400c4ffa56dd261a82a7232a22aa874deb76e931c12775e2.css?body=1" for ::1 at 2017-09-05 14:23:45 +0900
+
+
+Started GET "/assets/header.jpg" for ::1 at 2017-09-05 14:23:45 +0900
+
+
+Started GET "/users/sign_up" for ::1 at 2017-09-05 14:23:46 +0900
+Processing by Users::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 144ms (Views: 142.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/twitter" for ::1 at 2017-09-05 14:23:49 +0900
+
+
+Started GET "/users/auth/twitter" for ::1 at 2017-09-05 14:23:50 +0900
+
+
+Started GET "/users/auth/twitter/callback?oauth_token=EcN_VAAAAAAA2ISUAAABXlB-nNY&oauth_verifier=u1lXsDdjjpyxygiQJYXTCHAKkvsM19vE" for ::1 at 2017-09-05 14:23:51 +0900
+Processing by Users::OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"EcN_VAAAAAAA2ISUAAABXlB-nNY", "oauth_verifier"=>"u1lXsDdjjpyxygiQJYXTCHAKkvsM19vE"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 LIMIT 1  [["provider", "twitter"], ["uid", "1600240303"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5  [["last_sign_in_at", "2017-09-05 04:36:27.867537"], ["current_sign_in_at", "2017-09-05 05:23:53.155159"], ["sign_in_count", 3], ["updated_at", "2017-09-05 05:23:53.157124"], ["id", 4]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2017-09-05 14:23:53 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (3.0ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+Completed 200 OK in 114ms (Views: 113.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/blogs.self-3c46d205306a41f6400c4ffa56dd261a82a7232a22aa874deb76e931c12775e2.css?body=1" for ::1 at 2017-09-05 14:23:53 +0900
+
+
+Started GET "/assets/header.jpg" for ::1 at 2017-09-05 14:23:53 +0900
+
+
+Started GET "/blogs/new" for ::1 at 2017-09-05 14:24:16 +0900
+Processing by BlogsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  Rendered blogs/_form.html.erb (11.7ms)
+  Rendered blogs/new.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 155ms (Views: 130.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/blogs" for ::1 at 2017-09-05 14:24:19 +0900
+Processing by BlogsController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36mBlog Load (0.4ms)[0m  [1mSELECT "blogs".* FROM "blogs"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered blogs/index.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 141ms (Views: 136.7ms | ActiveRecord: 1.7ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2017-09-05 14:25:07 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"BNgxBUg8JfkhUB4WhOQJulZ4q3aDx1KeXvkV6u2SlfPWrWUWXywTTzB79VITWhY0731QIfQN6e8ZuXBfG1XMTQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2017-09-05 14:25:07 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 143ms (Views: 142.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/header.jpg" for ::1 at 2017-09-05 14:25:07 +0900
+
+
+Started GET "/users/sign_up" for ::1 at 2017-09-05 14:25:09 +0900
+Processing by Users::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 122ms (Views: 120.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2017-09-05 14:25:11 +0900
+
+
+Started GET "/users/auth/facebook" for ::1 at 2017-09-05 14:25:12 +0900
+
+
+Started GET "/users/auth/facebook/callback?code=AQBVZC-e_14bSeFKZoeyxRvvi-oO2X6v8Vja2aAES0Fb8wnAjXBSl_AqiwWkYGCe8dymkXGJmEePz-VncKqBKJsh1B4H9rAf5eEsQf9KO-61z4oIAkDytp6EUsjTGt2lOuBcAQ-XtyHKWZjgfTXwpgUcHc0g3n62y_FsohBzm2G1vA2fGdGJFKeWt-UJ-Q2YbeY9MZtnmmuaC6yzdsXp1Z9Y3BiHg_qH1QEkWGZ_FS5ksVX-TnFROBoaeBlICv_PbcPNjMIi_WHTk9O0WRo_Ek0q6pZb1xYeebkXSMMbjVGvF6TCVXSJZOtZtODs-xhTsEQ&state=38d780cb96338129fbe2b2436ebad20eab88127cfd3fa975" for ::1 at 2017-09-05 14:25:12 +0900
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQBVZC-e_14bSeFKZoeyxRvvi-oO2X6v8Vja2aAES0Fb8wnAjXBSl_AqiwWkYGCe8dymkXGJmEePz-VncKqBKJsh1B4H9rAf5eEsQf9KO-61z4oIAkDytp6EUsjTGt2lOuBcAQ-XtyHKWZjgfTXwpgUcHc0g3n62y_FsohBzm2G1vA2fGdGJFKeWt-UJ-Q2YbeY9MZtnmmuaC6yzdsXp1Z9Y3BiHg_qH1QEkWGZ_FS5ksVX-TnFROBoaeBlICv_PbcPNjMIi_WHTk9O0WRo_Ek0q6pZb1xYeebkXSMMbjVGvF6TCVXSJZOtZtODs-xhTsEQ", "state"=>"38d780cb96338129fbe2b2436ebad20eab88127cfd3fa975"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 LIMIT 1  [["provider", "facebook"], ["uid", "10203823856113783"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "sign_in_count" = $2, "updated_at" = $3 WHERE "users"."id" = $4  [["current_sign_in_at", "2017-09-05 05:25:13.579812"], ["sign_in_count", 2], ["updated_at", "2017-09-05 05:25:13.582058"], ["id", 3]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2017-09-05 14:25:13 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (3.6ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+Completed 200 OK in 115ms (Views: 114.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/header.jpg" for ::1 at 2017-09-05 14:25:13 +0900
+
+
+Started DELETE "/users/sign_out" for ::1 at 2017-09-05 14:25:23 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Unqj98NJwx6vbkN1wd8WGipGAMSYc8k97cuEepQeVauXa91p8/qcHy3ip3RoqRxMNfwenEYyK8z+pKyThMS+tQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2017-09-05 14:25:23 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 141ms (Views: 140.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/header.jpg" for ::1 at 2017-09-05 14:25:23 +0900
+
+
+Started GET "/users/sign_up" for ::1 at 2017-09-05 14:25:25 +0900
+Processing by Users::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 139ms (Views: 135.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/twitter" for ::1 at 2017-09-05 14:25:27 +0900
+
+
+Started GET "/users/auth/twitter" for ::1 at 2017-09-05 14:25:28 +0900
+
+
+Started GET "/users/auth/twitter/callback?oauth_token=VB9luAAAAAAA2ISUAAABXlCAHDs&oauth_verifier=xMBWeIPXBXpXmwQYtVmvLuajwCD0nJBQ" for ::1 at 2017-09-05 14:25:29 +0900
+Processing by Users::OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"VB9luAAAAAAA2ISUAAABXlCAHDs", "oauth_verifier"=>"xMBWeIPXBXpXmwQYtVmvLuajwCD0nJBQ"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 LIMIT 1  [["provider", "twitter"], ["uid", "1600240303"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5  [["last_sign_in_at", "2017-09-05 05:23:53.155159"], ["current_sign_in_at", "2017-09-05 05:25:30.847231"], ["sign_in_count", 4], ["updated_at", "2017-09-05 05:25:30.850140"], ["id", 4]]
+  [1m[36m (1.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2017-09-05 14:25:30 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (4.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+Completed 200 OK in 112ms (Views: 111.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/header.jpg" for ::1 at 2017-09-05 14:25:31 +0900
+
+
+Started GET "/blogs/new" for ::1 at 2017-09-05 14:26:19 +0900
+Processing by BlogsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  Rendered blogs/_form.html.erb (1.3ms)
+  Rendered blogs/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 132ms (Views: 129.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/blogs" for ::1 at 2017-09-05 14:26:21 +0900
+Processing by BlogsController#index as HTML
+  [1m[35mUser Load (1.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36mBlog Load (0.3ms)[0m  [1mSELECT "blogs".* FROM "blogs"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered blogs/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 117ms (Views: 112.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/blogs" for ::1 at 2017-09-05 14:26:53 +0900
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mBlog Load (0.5ms)[0m  SELECT "blogs".* FROM "blogs"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered blogs/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 165ms (Views: 162.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/blogs.self-8d99bab2a3475c5934b8eb4158d54feea174319f77d4a4c363ee2d071020800d.css?body=1" for ::1 at 2017-09-05 14:26:54 +0900
+
+
+Started GET "/blogs" for ::1 at 2017-09-05 14:28:01 +0900
+Processing by BlogsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36mBlog Load (0.3ms)[0m  [1mSELECT "blogs".* FROM "blogs"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered blogs/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 168ms (Views: 165.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/blogs.self-17d6145c8f1ec32916be3e5bbcba828ba8e644d27038cd079e472c5aa5e56186.css?body=1" for ::1 at 2017-09-05 14:28:02 +0900
+
+
+Started GET "/blogs/new" for ::1 at 2017-09-05 14:28:09 +0900
+Processing by BlogsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  Rendered blogs/_form.html.erb (1.4ms)
+  Rendered blogs/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 150ms (Views: 146.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2017-09-05 14:28:20 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (4.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+Completed 200 OK in 120ms (Views: 119.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/blogs.self-17d6145c8f1ec32916be3e5bbcba828ba8e644d27038cd079e472c5aa5e56186.css?body=1" for ::1 at 2017-09-05 14:28:20 +0900
+
+
+Started GET "/assets/header.jpg" for ::1 at 2017-09-05 14:28:20 +0900
+
+
+Started GET "/blogs" for ::1 at 2017-09-05 14:28:26 +0900
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mBlog Load (0.3ms)[0m  SELECT "blogs".* FROM "blogs"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered blogs/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 126ms (Views: 122.9ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2017-09-05 14:28:31 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"EJ0tEEnmmIoQ4CWQggAV1Hsf7v+UGh+I8/DhOxuKFpATzfTrytkCDs4atSep0ddjSP4AKiqXJam1YBP7p0QrcQ=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2017-09-05 14:28:31 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 127ms (Views: 127.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/header.jpg" for ::1 at 2017-09-05 14:28:32 +0900
+
+
+Started GET "/users/sign_up" for ::1 at 2017-09-05 14:28:36 +0900
+Processing by Users::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 150ms (Views: 148.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2017-09-05 14:28:38 +0900
+
+
+Started GET "/users/auth/facebook" for ::1 at 2017-09-05 14:28:38 +0900
+
+
+Started GET "/users/auth/facebook/callback?code=AQD0l0x7Ir3XAjkR9Wsd1FsAYIzL9d8RWp6a82c8b07D4ysT9rV0CyXHX5e1uHmpiM7MkOER2OUMrfjIlT-RD1OA7BeVBpybjy79hX_VI4uQXPpl8ZITH6wte9Qvn6S951pOKFjIyiBR9u-OkiTCsO6mDXJmNSmdRqAdQ8IEYEkXCGnrnni7S5gLzKqBgYgg1YndyNKIebIGQAuir-7Pc2NbHQu-aa04tHKeGOiP840B3KBsaxAfOcR_GDuMTWRfesvJf8ezO5WxyLUqd9uvjVQxSfkV_4R6sJ9BPvyui96hBDjU0qtAUKr-gsIP1NLVzBg&state=33c9f4753a602c50852d556b1603557c062ee0ad1dbadcd6" for ::1 at 2017-09-05 14:28:38 +0900
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQD0l0x7Ir3XAjkR9Wsd1FsAYIzL9d8RWp6a82c8b07D4ysT9rV0CyXHX5e1uHmpiM7MkOER2OUMrfjIlT-RD1OA7BeVBpybjy79hX_VI4uQXPpl8ZITH6wte9Qvn6S951pOKFjIyiBR9u-OkiTCsO6mDXJmNSmdRqAdQ8IEYEkXCGnrnni7S5gLzKqBgYgg1YndyNKIebIGQAuir-7Pc2NbHQu-aa04tHKeGOiP840B3KBsaxAfOcR_GDuMTWRfesvJf8ezO5WxyLUqd9uvjVQxSfkV_4R6sJ9BPvyui96hBDjU0qtAUKr-gsIP1NLVzBg", "state"=>"33c9f4753a602c50852d556b1603557c062ee0ad1dbadcd6"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 LIMIT 1[0m  [["provider", "facebook"], ["uid", "10203823856113783"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["last_sign_in_at", "2017-09-05 05:25:13.579812"], ["current_sign_in_at", "2017-09-05 05:28:39.708330"], ["sign_in_count", 3], ["updated_at", "2017-09-05 05:28:39.710647"], ["id", 3]]
+  [1m[35m (1.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2017-09-05 14:28:39 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 114ms (Views: 113.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/header.jpg" for ::1 at 2017-09-05 14:28:40 +0900
+
+
+Started DELETE "/users/sign_out" for ::1 at 2017-09-05 14:28:56 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"pCLICUOAStKzesgirmajhrmjmjHbj3xzkIkIcxnpsvFKAu+xsyA0nIDYdRlljAseCPxkDNNUBPYjbTEjdxEnjQ=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2017-09-05 14:28:56 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 126ms (Views: 125.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/header.jpg" for ::1 at 2017-09-05 14:28:56 +0900
+
+
+Started GET "/users/sign_up" for ::1 at 2017-09-05 14:28:58 +0900
+Processing by Users::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 135ms (Views: 134.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/twitter" for ::1 at 2017-09-05 14:29:00 +0900
+
+
+Started GET "/users/auth/twitter" for ::1 at 2017-09-05 14:29:01 +0900
+
+
+Started GET "/users/auth/twitter/callback?oauth_token=YeL0EQAAAAAA2ISUAAABXlCDWzo&oauth_verifier=0p60JjQ42LhBFZ2g0tH2Pox7PFoELR1g" for ::1 at 2017-09-05 14:29:02 +0900
+Processing by Users::OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"YeL0EQAAAAAA2ISUAAABXlCDWzo", "oauth_verifier"=>"0p60JjQ42LhBFZ2g0tH2Pox7PFoELR1g"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 LIMIT 1[0m  [["provider", "twitter"], ["uid", "1600240303"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (2.4ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["last_sign_in_at", "2017-09-05 05:25:30.847231"], ["current_sign_in_at", "2017-09-05 05:29:03.432144"], ["sign_in_count", 5], ["updated_at", "2017-09-05 05:29:03.434162"], ["id", 4]]
+  [1m[35m (1.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 11ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/" for ::1 at 2017-09-05 14:29:03 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+Completed 200 OK in 135ms (Views: 134.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/header.jpg" for ::1 at 2017-09-05 14:29:03 +0900
+
+
+Started DELETE "/users/sign_out" for ::1 at 2017-09-05 14:31:22 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"wyqz+FiaZlITRT1PTRJzeUS0Jw4FMPw73F0lXAxuKTzmQk6xEfd7M64MdUoZPj7G/JNcc9sQy+KXiwwsELBk2g=="}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36m (2.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2017-09-05 14:31:22 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 143ms (Views: 142.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/header.jpg" for ::1 at 2017-09-05 14:31:22 +0900
+
+
+Started GET "/users/sign_up" for ::1 at 2017-09-05 14:31:23 +0900
+Processing by Users::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 145ms (Views: 143.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2017-09-05 14:31:25 +0900
+
+
+Started GET "/users/auth/facebook" for ::1 at 2017-09-05 14:31:25 +0900
+
+
+Started GET "/users/auth/facebook/callback?code=AQBDCv0SEqpYLyHC-l_ZT4swcYN9SiWXuVioclLfqNna3IHVMgnPQe0VS1ttNn5s86z011z66asxNhQ4PKU4EgLU0yZXtF53EWxqrjQhAF3H6USHpFrWwrLn_BBUNSlOJqpeOUowvx-AqMvvw3r5mS-h9-1XT0A7Ebmr6frz2lxXfMW8kzPdADbgAGjcbEv-Rabxtex2uPXRzrK30pr5-6hbT-J-RkinUd8szBGbn967N_-c16wcwyaHYZ1uzKk06HeST8N17i23x6Nuu4Ck4WPgWaUzjKdSaor8OwwTFt-25zbHQKg5a4Khb1Xvc7kKTfc&state=8718378377ef760f7168423044a1821771ee8edeca28f877" for ::1 at 2017-09-05 14:31:25 +0900
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQBDCv0SEqpYLyHC-l_ZT4swcYN9SiWXuVioclLfqNna3IHVMgnPQe0VS1ttNn5s86z011z66asxNhQ4PKU4EgLU0yZXtF53EWxqrjQhAF3H6USHpFrWwrLn_BBUNSlOJqpeOUowvx-AqMvvw3r5mS-h9-1XT0A7Ebmr6frz2lxXfMW8kzPdADbgAGjcbEv-Rabxtex2uPXRzrK30pr5-6hbT-J-RkinUd8szBGbn967N_-c16wcwyaHYZ1uzKk06HeST8N17i23x6Nuu4Ck4WPgWaUzjKdSaor8OwwTFt-25zbHQKg5a4Khb1Xvc7kKTfc", "state"=>"8718378377ef760f7168423044a1821771ee8edeca28f877"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 LIMIT 1[0m  [["provider", "facebook"], ["uid", "10203823856113783"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["last_sign_in_at", "2017-09-05 05:28:39.708330"], ["current_sign_in_at", "2017-09-05 05:31:26.616613"], ["sign_in_count", 4], ["updated_at", "2017-09-05 05:31:26.619150"], ["id", 3]]
+  [1m[35m (1.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2017-09-05 14:31:26 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (4.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 114ms (Views: 113.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/header.jpg" for ::1 at 2017-09-05 14:31:26 +0900
+
+
+Started GET "/blogs/new" for ::1 at 2017-09-05 14:31:35 +0900
+Processing by BlogsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered blogs/_form.html.erb (1.5ms)
+  Rendered blogs/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 128ms (Views: 125.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blogs" for ::1 at 2017-09-05 14:31:38 +0900
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mBlog Load (0.4ms)[0m  SELECT "blogs".* FROM "blogs"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered blogs/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 125ms (Views: 119.2ms | ActiveRecord: 3.4ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2017-09-05 14:32:39 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JUSUVYawXw5Bm4ad/l/p0sodaflhBEdS/BaW7Su7nrhbYP6HeaOq/CQ5mxM1muLocpdiH3HnfkaqDSTOVJYEoA=="}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2017-09-05 14:32:39 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 148ms (Views: 148.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/header.jpg" for ::1 at 2017-09-05 14:32:39 +0900
+
+
+Started GET "/users/sign_up" for ::1 at 2017-09-05 14:32:42 +0900
+Processing by Users::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 151ms (Views: 149.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2017-09-05 14:32:44 +0900
+
+
+Started GET "/users/auth/facebook" for ::1 at 2017-09-05 14:32:45 +0900
+
+
+Started GET "/users/auth/facebook/callback?code=AQCW_1kZNRzS1jFf0xkYTms-_KmZk24yrZa1rmX9Nl8qUprEbpLKBjkPTfHKYNFVMmh370FEmmWn-ESs8Cs2i9TK_P-M1eTeyUSzjdeeuAXYcqVdTsRxVZEVBjWRIQEybuP0BuMnyFYHU4m2YDDOIsxMddIwEB_5ZKinp421oLxB7_MFpFOrK_HzoPyASiO1dYi3lEiIOxLe34lfKORAAeBLKQ-I7QqnyfV0RNHC7Wa2bcSXGswXYWlwlja_kUh-cYST6Wu_H-_5xtR8dK_Nsg9LRO-lxrODYjpVnXcfsDlL97O9KIAqJMrVo7R-mr4Lq7c&state=f5cb9944cb3bc6ba58f142d39e8d1d1f392bfc3af901d888" for ::1 at 2017-09-05 14:32:45 +0900
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCW_1kZNRzS1jFf0xkYTms-_KmZk24yrZa1rmX9Nl8qUprEbpLKBjkPTfHKYNFVMmh370FEmmWn-ESs8Cs2i9TK_P-M1eTeyUSzjdeeuAXYcqVdTsRxVZEVBjWRIQEybuP0BuMnyFYHU4m2YDDOIsxMddIwEB_5ZKinp421oLxB7_MFpFOrK_HzoPyASiO1dYi3lEiIOxLe34lfKORAAeBLKQ-I7QqnyfV0RNHC7Wa2bcSXGswXYWlwlja_kUh-cYST6Wu_H-_5xtR8dK_Nsg9LRO-lxrODYjpVnXcfsDlL97O9KIAqJMrVo7R-mr4Lq7c", "state"=>"f5cb9944cb3bc6ba58f142d39e8d1d1f392bfc3af901d888"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 LIMIT 1[0m  [["provider", "facebook"], ["uid", "10203823856113783"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["last_sign_in_at", "2017-09-05 05:31:26.616613"], ["current_sign_in_at", "2017-09-05 05:32:46.291553"], ["sign_in_count", 5], ["updated_at", "2017-09-05 05:32:46.293873"], ["id", 3]]
+  [1m[35m (1.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/" for ::1 at 2017-09-05 14:32:46 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 118ms (Views: 117.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/header.jpg" for ::1 at 2017-09-05 14:32:46 +0900
