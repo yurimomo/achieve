@@ -12,9 +12,22 @@
    <%= link_to "削除", blog_path(blog.id), method: :delete, data: {confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
    
    </div>
+   
+   <div class="profile">
+    <div class="profile_img">
+      <%= profile_img(blog.user) %>
+    </div>
+    <div class="user_name">
+      <%= blog.user_name %> が投稿しました。
+      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+      <i class="fa fa-trash" aria-hidden="true"></i>
 
-   <%= profile_img(blog.user) %>
-  <% end %>
+
+    </div>
+   </div>
+  
+   <% end %>
+     
  
  </div>
   

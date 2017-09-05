@@ -18,7 +18,23 @@ input[type="submit"].btn-block {
 .container {
     padding-bottom: 85px;
 }
-
+.profile:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+.profile {
+	margin-top: 20px;
+}
+.profile_img {
+	float: left;
+	width: auto;
+}
+.user_name {
+	float: right;
+	width: auto;
+	color: blue;
+}
 // .blogs-top-btn {
 //     display:none;
 //     border-radius: 50px;
