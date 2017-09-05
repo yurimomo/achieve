@@ -13446,3 +13446,57 @@ Completed 200 OK in 129ms (Views: 125.2ms | ActiveRecord: 1.2ms)
 
 
 Started GET "/assets/blogs.self-2b2ed378797deeb13b2ee930b3f20527138ba1e04a69008aaa4cce81b8780bf5.css?body=1" for ::1 at 2017-09-05 13:24:16 +0900
+
+
+Started DELETE "/users/sign_out" for ::1 at 2017-09-05 13:36:18 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"OEoFrLaHomWQ36IHKDZw2Lq1j3scLQQrS35hCj92+Dj0A6rToK3x7G5mTkzuQfnPrNichxR+oelf9soLWU1kIw=="}
+  [1m[35mUser Load (1.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 606ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/" for ::1 at 2017-09-05 13:36:19 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (627.8ms)
+Completed 200 OK in 825ms (Views: 824.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/header.jpg" for ::1 at 2017-09-05 13:36:20 +0900
+
+
+Started GET "/users/sign_up" for ::1 at 2017-09-05 13:36:22 +0900
+Processing by Users::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 151ms (Views: 149.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/twitter" for ::1 at 2017-09-05 13:36:24 +0900
+
+
+Started GET "/users/auth/twitter" for ::1 at 2017-09-05 13:36:25 +0900
+
+
+Started GET "/users/auth/twitter/callback?oauth_token=Dkl_SgAAAAAA2ISUAAABXlBTMyA&oauth_verifier=kbFmyXz1R4w85QC1v3REMVS9MfY7dM4m" for ::1 at 2017-09-05 13:36:26 +0900
+Processing by Users::OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"Dkl_SgAAAAAA2ISUAAABXlBTMyA", "oauth_verifier"=>"kbFmyXz1R4w85QC1v3REMVS9MfY7dM4m"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 LIMIT 1[0m  [["provider", "twitter"], ["uid", "1600240303"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = $1, "sign_in_count" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["current_sign_in_at", "2017-09-05 04:36:27.867537"], ["sign_in_count", 2], ["updated_at", "2017-09-05 04:36:27.869839"], ["id", 4]]
+  [1m[35m (1.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 11ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2017-09-05 13:36:27 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (4.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+Completed 200 OK in 103ms (Views: 102.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/header.jpg" for ::1 at 2017-09-05 13:36:28 +0900
