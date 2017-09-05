@@ -14098,3 +14098,22 @@ Completed 200 OK in 118ms (Views: 117.7ms | ActiveRecord: 0.4ms)
 
 
 Started GET "/assets/header.jpg" for ::1 at 2017-09-05 14:32:46 +0900
+
+
+Started GET "/blogs/new" for ::1 at 2017-09-05 14:46:43 +0900
+Processing by BlogsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered blogs/_form.html.erb (1.3ms)
+  Rendered blogs/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 104ms (Views: 102.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs" for ::1 at 2017-09-05 14:46:45 +0900
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (4.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mBlog Load (0.4ms)[0m  SELECT "blogs".* FROM "blogs"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered blogs/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 129ms (Views: 120.0ms | ActiveRecord: 5.4ms)
