@@ -17,10 +17,33 @@ class CommentsController < ApplicationController
   end
 end
 
-private
+#ドットインストール見ながらの実装
+def destroy
+  @comment = Comment.find(params[:id])
+  @comment.destroy
+ 
+ 
+  respond_to do |format|
+      if @comment.destroy
+        format.html { redirect_to blog_path(@blog), notice: 'コメントを削除しました。' }
+        # JS形式でレスポンスを返します。
+        format.js { render :index }
+
+      else
+        format.html { render :new }
+      end
+  end
+end
+
+
+  
+
+
+  private
     # ストロングパラメーター
     def comment_params
       params.require(:comment).permit(:blog_id, :content)
     end
 end
+
 
