@@ -1,29 +1,33 @@
 <div class="container">
- <h2>フォロ一覧</h2>
-
- <% @user.followed_users.each do |user| %>
- <div class="container-child col-md-2 col-sm-4 col-xs-6">
  <div class="row">
- <%= profile_img(user) %>
- <br>
-  <%= user.name %>
+  <h2>フォロ一覧</h2>
+
+  <% @user.followed_users.each do |user| %>
+  <div class="container-child col-md-2 col-sm-4 col-xs-6">
+   
+   <%= profile_img(user) %><br>
+   <%= user.name %><br>
+   <%= user.email %><br>
   </div>
  <% end %>
- <% end %>
+ 
  </div>
- </div>
-
-<h2>フォロワー一覧</h2>
-<% @user.followers.each do |user| %>
- <div class="container-child col-md-2 col-sm-4 col-xs-6">
+ 
  <div class="row">
-  <%= profile_img(user) %><br>
-  <%= user.name %>
-  <% end %>
- <% end %>
- </div>
- </div>
+  <h2>フォロワー一覧</h2>
+   <% @user.followers.each do |user| %>
+   <div class="container-child col-md-2 col-sm-4 col-xs-6">
+    <%= profile_img(user) %><br>
+    <%= user.name %><br>
+    <%= user.email %><br>
+    </div>
+    <% end %>
+ 
+   </div>
+   <%= link_to "前の画面に戻る" , users_path %><br>
+   <%= link_to "ブログ一覧へ戻る", blogs_path %>
+  </div>
+ 
+ 
 
 
-
-</div>
