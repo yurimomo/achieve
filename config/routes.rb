@@ -44,7 +44,7 @@ end
 
   root 'top#index'
 
- resources :users, only: [:index, :show]
+ resources :users, only: [:index, :show, :edit]
 
  resources :relationships, only: [:create, :destroy]
 
