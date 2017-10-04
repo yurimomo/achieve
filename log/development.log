@@ -34128,3 +34128,11 @@ Processing by UsersController#show as HTML
   Rendered users/show.html.erb within layouts/application (4.3ms)
   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 16]]
 Completed 200 OK in 153ms (Views: 144.8ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/users/edit" for ::1 at 2017-10-04 15:51:43 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 16]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (636.4ms)
+Completed 200 OK in 1392ms (Views: 1348.6ms | ActiveRecord: 10.4ms)

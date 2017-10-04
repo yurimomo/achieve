@@ -8,12 +8,12 @@
 
       <div class="field">
         <%= f.label :メールアドレス %>
-        <%= f.email_field :email, autofocus: true,class:"form-control",placeholder:"メールアドレス" %>
+        <%= f.email_field :email, autofocus: true, class: "form-control", placeholder:"メールアドレス" %>
       </div>
 
       <div class="field">
         <%= f.label :名前 %>
-        <%= f.text_field :name, autofocus: true,class:"form-control",placeholder:"名前" %>
+        <%= f.text_field :name, autofocus: true, class: "form-control", placeholder:"名前" %>
         <br />
       </div>
 
@@ -25,7 +25,7 @@
 
         <div class="field">
           <%= f.label :password %> <i>(変更する場合のみ入力)</i><br />
-          <%= f.password_field :password, autocomplete: "off",class:"form-control",placeholder:"パスワード" %>
+          <%= f.password_field :password, autocomplete: "off",class: "form-control", placeholder:"パスワード" %>
           <% if @minimum_password_length %>
             <em><%= @minimum_password_length %> 文字以上</em>
           <% end %>
@@ -33,13 +33,13 @@
 
         <div class="field">
           <%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "off",class:"form-control",placeholder:"パスワード(確認)" %>
+          <%= f.password_field :password_confirmation, autocomplete: "off",class: "form-control",placeholder:"パスワード(確認)" %>
             <br />
         </div>
 
         <div class="field">
           <%= f.label :current_password %> <i>(変更確認のため現在のパスワードを入力)</i><br />
-          <%= f.password_field :current_password, autocomplete: "off",class:"form-control",placeholder:"現在のパスワード" %>
+          <%= f.password_field :current_password, autocomplete: "off",class: "form-control",placeholder:"現在のパスワード" %>
           <br />
         </div>
 
@@ -64,12 +64,4 @@
 
   </div>
 </div>
-
-
-
-
-
-
-
-
 
