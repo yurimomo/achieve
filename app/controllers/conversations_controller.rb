@@ -12,7 +12,6 @@ class ConversationsController < ApplicationController
    if Conversation.between(params[:sender_id], params[:recipient_id]).present?
     #その会話を取得
     #betweenメソッドについては、後でモデルに定義します。
-
     @conversation = Conversation.between(params[:sender_id], params[:recipient_id]).first
     else
     	#過去に一件も存在しなかった場合、
