@@ -33,10 +33,11 @@ class MessagesController < ApplicationController
   	#HTTPリクエスト上のパラメータを利用して会話にひもづくメッセージを生成
    @message = @conversation.messages.build(message_params)
    #保存ができれば、会話にひもづくメッセージ一覧の画面に遷移する
-   if @message.save
+   #if @message.save
+    @message.save
     redirect_to conversation_messages_path(@conversation)
    end
-  end
+  
 
  #これにより、画面上のメッセージの内容や投稿者のIDを安全に取得することができるようになります。
  private
@@ -45,7 +46,6 @@ class MessagesController < ApplicationController
    end
 
 end
-
 
 
 
