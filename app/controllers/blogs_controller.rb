@@ -37,6 +37,9 @@ class BlogsController < ApplicationController
   def show
     @comment = @blog.comments.build
     @comments = @blog.comments
+    # ヘッダーの通知がリアルタイム
+    Notification.find(params[:notification_id]).update(read: true) if params[:notification_id]
+
   end
 
   

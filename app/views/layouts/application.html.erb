@@ -1,18 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://js.pusher.com/4.1/pusher.min.js"></script>
   <title>Achieve</title>
   <%= stylesheet_link_tag 'application', media:'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <% if user_signed_in? %>
+  
+   <script>
+    var pusher = new Pusher('<%= ENV["PUSHER_KEY"] %>',{
+      encrypted: true,
+      cluster: 'ap1'      
+    });
+   // 自分の通知だけ受け取る
+    var channel = pusher.subscribe("user_<%= current_user.id %>_channel");
+    channel.bind('comment_created', function(data) {
+      alert(data.message);
+    });
+     channel.bind('notification_created', function(data) {
+      $('#unread_count').html(data.unread_counts);
+      });
+ 
+   </script>
+  <% end %>
 </head>
+
 <body>
+  
   <header>
-    <nav class="navbar navbar-default">
-  <div class="container-fluid">
+   <nav class="navbar navbar-default">
+    <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
+     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
@@ -31,16 +54,20 @@
             <li><%= link_to "ブログ", blogs_path %></li>
             <li><%= link_to 'ユーザー一覧', users_path if user_signed_in? %></li>
             <li><%= link_to "メッセージ", conversations_path %></li>
-
           </ul>
-        </li>
+         </li>
         <% if user_signed_in? %>
          <li><%= link_to 'マイページ', edit_user_registration_path %></li>
          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+         <!-- 通知件数を表示される場所をuser_signed_in?に作成 -->
+          <%= link_to notifications_index_path do %>
+          <i class="fa fa-bell fa-1x"><span id="unread_count"><%= @notifications_count %></span></i>
+           <% end %>
          <% else %>
          <li><%= link_to 'ログイン', new_user_session_path %></li>
          <li><%= link_to 'サインアップ',new_user_registration_path %></li>
-         <% end %>
+       <% end %>
+
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
