@@ -19,4 +19,3 @@ CarrierWave.configure do |config|
       config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/開発環境用のバケット名'
   end
 end
-※
